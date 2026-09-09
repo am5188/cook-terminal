@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-ink-900 text-slate-200 antialiased;
+  background-image:
+    radial-gradient(60rem 40rem at 15% -10%, rgba(255, 127, 17, 0.12), transparent 60%),
+    radial-gradient(50rem 30rem at 100% 0%, rgba(255, 196, 113, 0.08), transparent 55%);
+  background-attachment: fixed;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-white/5 bg-ink-800/80 backdrop-blur;
+  }
+  .panel-pad {
+    @apply p-4 sm:p-5;
+  }
+  .label {
+    @apply text-[11px] font-medium uppercase tracking-wider text-slate-500;
+  }
+  .stat {
+    @apply font-mono text-xl font-semibold text-slate-100 tabular-nums;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold
+           transition disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .btn-primary {
+    @apply btn bg-cookie-500 text-ink-900 hover:bg-cookie-400;
+  }
+  .btn-ghost {
+    @apply btn border border-white/10 bg-white/5 text-slate-200 hover:bg-white/10;
+  }
+  .input {
+    @apply w-full rounded-lg border border-white/10 bg-ink-700 px-3 py-2 font-mono text-sm
+           text-slate-100 placeholder:text-slate-500 focus:border-cookie-500 focus:outline-none;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-medium;
+  }
+  .chip-ok {
+    @apply chip border-emerald-500/30 bg-emerald-500/10 text-emerald-300;
+  }
+  .chip-warn {
+    @apply chip border-amber-500/30 bg-amber-500/10 text-amber-300;
+  }
+  .chip-bad {
+    @apply chip border-rose-500/30 bg-rose-500/10 text-rose-300;
+  }
+  .chip-muted {
+    @apply chip border-white/10 bg-white/5 text-slate-400;
+  }
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

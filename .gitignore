@@ -1,0 +1,10 @@
+﻿node_modules/
+dist/
+shots/
+*.tsbuildinfo
+.env
+.env.local
+*.log
+.DS_Store
+.vscode/
+.vercel
